@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BaiTapWindowsform3
+{
+    internal class NhanVien
+    {
+        public string MaNV { get; set; }
+        public string HoTen { get; set; }
+        public DateTime NgaySinh { get; set; }
+        public int HeSoLuong { get; set; }
+        public int HeSoPhuCap { get; set; }
+        public NhanVien()
+        {
+
+        }
+
+        public NhanVien(string maNV, string hoTen, DateTime ngaySinh, int heSoLuong, int heSoPhuCap)
+        {
+            MaNV = maNV;
+            HoTen = hoTen;
+            NgaySinh = ngaySinh;
+            HeSoLuong = heSoLuong;
+            HeSoPhuCap = heSoPhuCap;
+        }
+        public int TongLuong()
+        {
+            int res = 0;
+            res = (HeSoLuong + HeSoPhuCap) * 1150000;
+            return res;
+        }
+        public string HienThi()
+        {
+            return string.Format("{0}, {1}, {2}, {3}, {4}, {5}", MaNV, HoTen, NgaySinh, HeSoLuong, HeSoPhuCap, TongLuong());
+        }
+    }
+}
